@@ -164,36 +164,32 @@
 						$img = array('upload_data' => $this->upload->data());
 						$new_name = $img['upload_data']['file_name'];
 
-						// var_dump($img);
+						$data = [
 
-						echo $new_name;
-
-						// $data = [
-
-						// 	'kode_member' => $this->session->kode_member,
-						// 	'prov' => $this->input->post('prov'),
-						// 	'kab' => $this->input->post('kab'),
-						// 	'kec' => $this->input->post('kec'),
-						// 	'alamat_detail' => $this->input->post('alamat_detail'),
-						// 	'kategori' => 'rumah',
-						// 	'harga' => $this->input->post('harga'),
-						// 	'jml_kamar_tidur' => $this->input->post('jml_kamar_tidur'),
-						// 	'jml_kamar_mandi' => $this->input->post('jml_kamar_mandi'),
-						// 	'luas_bangunan' => $this->input->post('luas_bangunan'),
-						// 	'luas_tanah' => $this->input->post('luas_tanah'),
-						// 	'jml_garasi' => $this->input->post('jml_garasi'),
-						// 	'fasilitas' => $fasilitas,
-						// 	'deskripsi' => $this->input->post('deskripsi'),
-						// 	'foto' => $new_name,
-						// ];
+							'kode_member' => $this->session->kode_member,
+							'prov' => $this->input->post('prov'),
+							'kab' => $this->input->post('kab'),
+							'kec' => $this->input->post('kec'),
+							'alamat_detail' => $this->input->post('alamat_detail'),
+							'kategori' => 'rumah',
+							'harga' => $this->input->post('harga'),
+							'jml_kamar_tidur' => $this->input->post('jml_kamar_tidur'),
+							'jml_kamar_mandi' => $this->input->post('jml_kamar_mandi'),
+							'luas_bangunan' => $this->input->post('luas_bangunan'),
+							'luas_tanah' => $this->input->post('luas_tanah'),
+							'jml_garasi' => $this->input->post('jml_garasi'),
+							'fasilitas' => $fasilitas,
+							'deskripsi' => $this->input->post('deskripsi'),
+							'foto' => $new_name,
+						];
 
 					}
 
 				}
 
-				// $this->db->insert('tbl_rumah', $data);
-				// $this->session->set_flashdata('message', 'swal("Yess", "Profil anda berhasil di buat", "success");');
-				// redirect('member/upload');
+				$this->db->insert('tbl_rumah', $data);
+				$this->session->set_flashdata('message', 'swal("Yess", "Profil anda berhasil di buat", "success");');
+				redirect('member/upload');
 
 			}
 
