@@ -3,7 +3,7 @@
     <div class="card-body">
 
       <h2 class="text-center text-white mt-3">Register Member <br></h2>
-      <p class="text-white mt-2" style="text-align: center;">Pasarkan properti Anda di HomeStay <br>dan raih makin banyak peluang! Karena kami Ada Buat Anda</p>
+      <p class="text-white mt-2" style="text-align: center;">Pasarkan properti Anda di HomeStay <br>dan raih makin banyak peluang! Karena kami Ada Buae Anda</p>
 
       <div class="row">
         <div class="col-sm-4">

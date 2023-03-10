@@ -29,7 +29,7 @@
                   <div class="form row mb-2 mx-2">
                     <div class="col-sm-6">
                       <label>Harga Rumah</label>
-                      <input type="number" name="harga" class="form-control">
+                      <input type="number" name="harga" class="form-control" value="<?= $detail['harga'] ?>">
                     </div>
 
                     <div class="col-sm-6">
@@ -54,7 +54,7 @@
                   </div>
                   <div class="col-sm-6 mt-2">
                     <label>Alamat Detail</label>
-                    <textarea class="form-control" name="alamat_detail"></textarea>
+                    <textarea class="form-control" name="alamat_detail"><?= $detail['alamat_detail'] ?></textarea>
                   </div>
                 </div>
 
@@ -64,24 +64,24 @@
                   <div class="form row mb-2 mx-2">
                     <div class="col-sm-6">
                       <label>Kamar Tidur</label>
-                      <input type="number" name="jml_kamar_tidur" class="form-control">
+                      <input type="number" name="jml_kamar_tidur" class="form-control" value="<?= $detail['jml_kamar_tidur'] ?>">
                     </div>
                     <div class="col-sm-6">
                       <label>Kamar Mandi</label>
-                      <input type="number" name="jml_kamar_mandi" class="form-control">
+                      <input type="number" name="jml_kamar_mandi" class="form-control" value="<?= $detail['jml_kamar_mandi'] ?>">
                     </div>
                     <div class="col-sm-6 mt-2">
                       <label>Luas Tanah</label>
-                      <input type="number" name="luas_tanah" class="form-control">
+                      <input type="number" name="luas_tanah" class="form-control" value="<?= $detail['luas_tanah'] ?>">
                     </div>
                     <div class="col-sm-6 mt-2">
                       <label>Luas Bangunan</label>
-                      <input type="number" name="luas_bangunan" class="form-control">
+                      <input type="number" name="luas_bangunan" class="form-control" value="<?= $detail['luas_bangunan'] ?>">
                     </div>
 
                     <div class="col-sm-6 mt-2">
                       <label>Garasi</label>
-                      <input type="number" name="jml_garasi" class="form-control">
+                      <input type="number" name="jml_garasi" class="form-control" value="<?= $detail['jml_garasi'] ?>">
                     </div>
                   </div>
                 </div>
@@ -145,13 +145,23 @@
                     <hr>
                     <div class="form row mb-2 mx-2">
                       <div class="row">
-                        <textarea class="form-control" name="deskripsi" placeholder="Masukan deskpripsi rumah anda"></textarea>
+                        <textarea class="form-control" name="deskripsi" placeholder="Masukan deskpripsi rumah anda"> <?= $detail['deskripsi'] ?></textarea>
                       </div>
                     </div>
 
                     <div class="card">
                       <h5 class="my-2 mx-2">Foto</h5>
                       <hr>
+
+                      <?php 
+
+                      $arr = explode(',', $detail['foto']);
+                      $count = count($arr);
+
+                      for ($i=0; $i < $count ; $i++) { 
+
+                      }
+                      ?>
                       <div class="form row mb-2 mx-2">
                         <div class="row">
                           <input type="file" name="foto1" class="form-control">
