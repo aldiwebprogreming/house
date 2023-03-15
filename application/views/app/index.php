@@ -310,7 +310,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="tab-2" class="tab-pane fade show p-0">
+                    <!-- <div id="tab-2" class="tab-pane fade show p-0">
                         <div class="row g-4">
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
@@ -348,7 +348,7 @@
                                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
                                         <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
                                     </div>
-                                </div>
+                                </div>//
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
@@ -430,8 +430,8 @@
                                 <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
                             </div>
                         </div>
-                    </div>
-                    <div id="tab-3" class="tab-pane fade show p-0">
+                    </div> -->
+                    <!-- <div id="tab-3" class="tab-pane fade show p-0">
                         <div class="row g-4">
                             <div class="col-lg-4 col-md-6">
                                 <div class="property-item rounded overflow-hidden">
@@ -551,7 +551,7 @@
                                 <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
