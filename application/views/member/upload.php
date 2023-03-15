@@ -28,135 +28,151 @@
                   <hr>
                   <div class="form row mb-2 mx-2">
                     <div class="col-sm-6">
-                      <label>Harga Rumah</label>
-                      <input type="number" name="harga" class="form-control">
+                      <label>Nama Produk</label>
+                      <input type="text" name="nama_produk" class="form-control">
                     </div>
 
                     <div class="col-sm-6">
-                      <label>Provinsi</label>
-                      <select class="form-control" name="prov">
-                        <option value="<?= $prov['id'] ?>"><?= $prov['name'] ?></option>
-                      </select>
-                    </div>
+                      <label>Kategori</label>
+                      <select class="form-control" name="kategori">
+                        <option>-- Pilih Kategori --</option>
+                        <?php 
+                        foreach ($kategori as $kt) {
+                         ?>
+                         <option value="<?= $kt['kode'] ?>"><?= $kt['kategori'] ?></option>
+                       <?php } ?>
+                     </select>
+                   </div>
+                   <div class="col-sm-6">
+                    <label>Harga Rumah</label>
+                    <input type="number" name="harga" class="form-control">
                   </div>
-                  <div class="form row mb-2 mx-2">
-                    <div class="col-sm-6">
-                      <label>Kota / Kabupaten</label>
-                      <select class="form-control" name="kab">
-                        <option value="<?= $kab['id'] ?>"><?= $kab['name'] ?></option>
-                      </select>
-                    </div>
-                    <div class="col-sm-6">
-                     <label>Kecamatan</label>
-                     <select class="form-control" name="kec">
-                      <option value="<?= $kec['id'] ?>"><?= $kec['name'] ?></option>
+
+                  <div class="col-sm-6">
+                    <label>Provinsi</label>
+                    <select class="form-control" name="prov">
+                      <option value="<?= $prov['id'] ?>"><?= $prov['name'] ?></option>
                     </select>
                   </div>
+                </div>
+                <div class="form row mb-2 mx-2">
+                  <div class="col-sm-6">
+                    <label>Kota / Kabupaten</label>
+                    <select class="form-control" name="kab">
+                      <option value="<?= $kab['id'] ?>"><?= $kab['name'] ?></option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6">
+                   <label>Kecamatan</label>
+                   <select class="form-control" name="kec">
+                    <option value="<?= $kec['id'] ?>"><?= $kec['name'] ?></option>
+                  </select>
+                </div>
+                <div class="col-sm-6 mt-2">
+                  <label>Alamat Detail</label>
+                  <textarea class="form-control" name="alamat_detail"></textarea>
+                </div>
+              </div>
+
+              <div class="card mt-3">
+                <h5 class="my-2 mx-2">Spesifikasi</h5>
+                <hr>
+                <div class="form row mb-2 mx-2">
+                  <div class="col-sm-6">
+                    <label>Kamar Tidur</label>
+                    <input type="number" name="jml_kamar_tidur" class="form-control">
+                  </div>
+                  <div class="col-sm-6">
+                    <label>Kamar Mandi</label>
+                    <input type="number" name="jml_kamar_mandi" class="form-control">
+                  </div>
                   <div class="col-sm-6 mt-2">
-                    <label>Alamat Detail</label>
-                    <textarea class="form-control" name="alamat_detail"></textarea>
+                    <label>Luas Tanah</label>
+                    <input type="number" name="luas_tanah" class="form-control">
+                  </div>
+                  <div class="col-sm-6 mt-2">
+                    <label>Luas Bangunan</label>
+                    <input type="number" name="luas_bangunan" class="form-control">
+                  </div>
+
+                  <div class="col-sm-6 mt-2">
+                    <label>Garasi</label>
+                    <input type="number" name="jml_garasi" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <h5 class="my-2 mx-2">Fasilitas</h5>
+                <hr>
+                <div class="form row mb-2 mx-2">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <div class="form-check form-check-inline" style="position: inline;">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="Taman">
+                        <label class="form-check-label" for="inlineCheckbox1">Taman</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Pondok">
+                        <label class="form-check-label" for="inlineCheckbox2">Pondok</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Kolam Renang">
+                        <label class="form-check-label" for="inlineCheckbox2">Kolam Renang</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-check form-check-inline" style="position: inline;">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="L.Olahraga">
+                        <label class="form-check-label" for="inlineCheckbox1">L.Olahraga</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Parkir">
+                        <label class="form-check-label" for="inlineCheckbox2">Parkir</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Keamanan">
+                        <label class="form-check-label" for="inlineCheckbox2">Keamanan</label>
+                      </div>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                      <div class="form-check form-check-inline" style="position: inline;">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Kolam Ikan</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Tempat Ibadah</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Kebersihan</label>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
 
-                <div class="card mt-3">
-                  <h5 class="my-2 mx-2">Spesifikasi</h5>
-                  <hr>
-                  <div class="form row mb-2 mx-2">
-                    <div class="col-sm-6">
-                      <label>Kamar Tidur</label>
-                      <input type="number" name="jml_kamar_tidur" class="form-control">
-                    </div>
-                    <div class="col-sm-6">
-                      <label>Kamar Mandi</label>
-                      <input type="number" name="jml_kamar_mandi" class="form-control">
-                    </div>
-                    <div class="col-sm-6 mt-2">
-                      <label>Luas Tanah</label>
-                      <input type="number" name="luas_tanah" class="form-control">
-                    </div>
-                    <div class="col-sm-6 mt-2">
-                      <label>Luas Bangunan</label>
-                      <input type="number" name="luas_bangunan" class="form-control">
-                    </div>
-
-                    <div class="col-sm-6 mt-2">
-                      <label>Garasi</label>
-                      <input type="number" name="jml_garasi" class="form-control">
-                    </div>
-                  </div>
-                </div>
 
                 <div class="card">
-                  <h5 class="my-2 mx-2">Fasilitas</h5>
+                  <h5 class="my-2 mx-2">Deskripsi</h5>
                   <hr>
                   <div class="form row mb-2 mx-2">
                     <div class="row">
-                      <div class="col-sm-3">
-                        <div class="form-check form-check-inline" style="position: inline;">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="Taman">
-                          <label class="form-check-label" for="inlineCheckbox1">Taman</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Pondok">
-                          <label class="form-check-label" for="inlineCheckbox2">Pondok</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Kolam Renang">
-                          <label class="form-check-label" for="inlineCheckbox2">Kolam Renang</label>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="form-check form-check-inline" style="position: inline;">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="L.Olahraga">
-                          <label class="form-check-label" for="inlineCheckbox1">L.Olahraga</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Parkir">
-                          <label class="form-check-label" for="inlineCheckbox2">Parkir</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Keamanan">
-                          <label class="form-check-label" for="inlineCheckbox2">Keamanan</label>
-                        </div>
-
-                      </div>
-
-                      <div class="col-sm-3">
-                        <div class="form-check form-check-inline" style="position: inline;">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="option1">
-                          <label class="form-check-label" for="inlineCheckbox1">Kolam Ikan</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox2">Tempat Ibadah</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox2">Kebersihan</label>
-                        </div>
-
-                      </div>
+                      <textarea class="form-control" name="deskripsi" placeholder="Masukan deskpripsi rumah anda"></textarea>
                     </div>
                   </div>
 
-
                   <div class="card">
-                    <h5 class="my-2 mx-2">Deskripsi</h5>
+                    <h5 class="my-2 mx-2">Foto</h5>
                     <hr>
                     <div class="form row mb-2 mx-2">
                       <div class="row">
-                        <textarea class="form-control" name="deskripsi" placeholder="Masukan deskpripsi rumah anda"></textarea>
+                        <input type="file" name="foto1" class="form-control">
                       </div>
                     </div>
-
-                    <div class="card">
-                      <h5 class="my-2 mx-2">Foto</h5>
-                      <hr>
-                      <div class="form row mb-2 mx-2">
-                        <div class="row">
-                          <input type="file" name="foto1" class="form-control">
-                        </div>
-                      </div>
 
                       <!-- <div class="form row mb-2 mx-2">
                         <div class="row">
@@ -179,24 +195,24 @@
                         </div>
                       </div>
                     -->
-                      <input type="submit" name="kirim" class="btn btn-primary" value="Upload Rumah">
+                    <input type="submit" name="kirim" class="btn btn-primary" value="Upload Rumah">
 
-                    </form>
-                  </div>
+                  </form>
                 </div>
               </div>
-            </div>   
+            </div>
+          </div>   
 
-          </div>
         </div>
-
       </div>
-
-
 
     </div>
 
+
+
   </div>
+
+</div>
 
 </div>
 

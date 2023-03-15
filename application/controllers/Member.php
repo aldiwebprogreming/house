@@ -128,6 +128,7 @@
 			$data['kab'] = $this->db->get_where('tbl_kabupaten', ['id' => $member['kab']])->row_array();
 			$data['kec'] = $this->db->get_where('tbl_kecamatan', ['id' => $member['kec']])->row_array();
 
+			$data['kategori'] = $this->db->get('tbl_kategori')->result_array();
 			$this->load->view('template_member/header');
 			$this->load->view('member/upload', $data);
 			$this->load->view('template_member/footer');
@@ -169,7 +170,8 @@
 						'kab' => $this->input->post('kab'),
 						'kec' => $this->input->post('kec'),
 						'alamat_detail' => $this->input->post('alamat_detail'),
-						'kategori' => 'rumah',
+						'kategori' => $this->input->post('kategori'),
+						'nama_produk' => $this->input->post('nama_produk'),
 						'harga' => $this->input->post('harga'),
 						'jml_kamar_tidur' => $this->input->post('jml_kamar_tidur'),
 						'jml_kamar_mandi' => $this->input->post('jml_kamar_mandi'),
@@ -184,7 +186,7 @@
 				}
 
 				$this->db->insert('tbl_rumah', $data);
-				$this->session->set_flashdata('message', 'swal("Yess", "Profil anda berhasil di buat", "success");');
+				$this->session->set_flashdata('message', 'swal("Yess", "Rumah anda berhasil di upload", "success");');
 				redirect('member/upload');
 
 			}

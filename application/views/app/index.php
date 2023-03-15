@@ -30,25 +30,29 @@
             <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
         </div>
         <div class="row g-4">
-            <div class="col-lg-3 col-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                    <div class="rounded p-4">
-                        <div class="icon mb-3">
-                            <img class="img-fluid" src="<?= base_url('assets/') ?>img/icon-apartment.png" alt="Icon">
+            <?php 
+            foreach ($kategori as $data) {
+                ?>
+                <div class="col-lg-3 col-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                        <div class="rounded p-4">
+                            <div class="icon mb-3">
+                                <img class="img-fluid" src="<?= base_url('assets/') ?>img/icon-apartment.png" alt="Icon">
+                            </div>
+                            <h6><?= $data['kategori'] ?></h6>
+                            <span><?= rand(0,1000) ?> Properties</span>
                         </div>
-                        <h6>Apartment</h6>
-                        <span>123 Properties</span>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-6 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    </a>
+                </div>
+            <?php } ?>
+            <!-- <div class="col-lg-3 col-6 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                 <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                     <div class="rounded p-4">
                         <div class="icon mb-3">
                             <img class="img-fluid" src="<?= base_url('assets/') ?>img/icon-villa.png" alt="Icon">
                         </div>
                         <h6>Villa</h6>
-                        <span>123 Properties</span>
+                        <span> Properties</span>
                     </div>
                 </a>
             </div>
@@ -117,7 +121,7 @@
                         <span>123 Properties</span>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -175,26 +179,38 @@
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <div class="row g-4">
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="<?= base_url('assets/') ?>img/property-1.jpg" alt=""></a>
-                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">Rp.900.000.000</h5>
-                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Medan, Sumatera Utara</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+
+                            <?php foreach ($rumah as $produk) { ?>
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href=""><img class="img-fluid" src="<?= base_url('imghouse/') ?><?= $produk['foto'] ?>" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+
+                                            <?php 
+                                            $kategori = $this->db->get_where('tbl_kategori', ['kode' => $produk['kategori']])->row_array();
+                                            ?>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"><?= $kategori['kategori'] ?></div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">Rp.<?= $produk['harga'] ?></h5>
+                                            <a class="d-block h5 mb-2" href=""><?= $produk['nama_produk'] ?></a>
+                                            <?php 
+                                            $prov = $this->db->get_where('tbl_provinsi', ['id' => $produk['prov']])->row_array();
+                                            $kab = $this->db->get_where('tbl_kabupaten', ['id' => $produk['kab']])->row_array();
+                                            ?>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i><?= $kab['name'] ?>, <?= $prov['name'] ?></p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i><?= $produk['luas_tanah'] ?> Sqft</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i><?= $produk['jml_kamar_tidur'] ?> Bed</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i><?= $produk['jml_kamar_mandi'] ?> Bath</small>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <?php } ?>
+
+                           <!--  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
                                         <a href=""><img class="img-fluid" src="<?= base_url('assets/') ?>img/property-2.jpg" alt=""></a>
@@ -287,7 +303,7 @@
                                         <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
                                         <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
                                 <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>

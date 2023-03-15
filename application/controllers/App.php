@@ -14,8 +14,10 @@
 
 		function index(){
 
+			$data['kategori'] = $this->db->get('tbl_kategori')->result_array();
+			$data['rumah'] = $this->db->get('tbl_rumah')->result_array();
 			$this->load->view('template/header');
-			$this->load->view('app/index');
+			$this->load->view('app/index', $data);
 			$this->load->view('template/footer');
 		}
 
