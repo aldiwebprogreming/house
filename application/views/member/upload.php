@@ -158,7 +158,7 @@
                         </div>
                       </div>
 
-                      <div class="form row mb-2 mx-2">
+                      <!-- <div class="form row mb-2 mx-2">
                         <div class="row">
                           <input type="file" name="foto2" class="form-control">
                         </div>
@@ -178,7 +178,7 @@
                           <input type="file" name="foto5" class="form-control">
                         </div>
                       </div>
-
+                    -->
                       <input type="submit" name="kirim" class="btn btn-primary" value="Upload Rumah">
 
                     </form>

@@ -123,7 +123,7 @@
 
                       <div class="col-sm-3">
                         <div class="form-check form-check-inline" style="position: inline;">
-                          <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <input class="form-check-input"  name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="option1">
                           <label class="form-check-label" for="inlineCheckbox1">Kolam Ikan</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -168,7 +168,7 @@
                         </div>
                       </div>
 
-                      <div class="form row mb-2 mx-2">
+                     <!--  <div class="form row mb-2 mx-2">
                         <div class="row">
                           <input type="file" name="foto2" class="form-control">
                         </div>
@@ -187,9 +187,9 @@
                         <div class="row">
                           <input type="file" name="foto5" class="form-control">
                         </div>
-                      </div>
+                      </div> -->
 
-                      <input type="submit" name="kirim" class="btn btn-primary" value="Upload Rumah">
+                      <input type="submit" name="kirim" class="btn btn-primary" value="Ubah Data">
 
                     </form>
                   </div>

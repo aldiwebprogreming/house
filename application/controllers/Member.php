@@ -140,50 +140,46 @@
 
 			if (isset($_POST['kirim'])) {
 
-				for ($i=1; $i <= 5 ; $i++) { 
-
-					$config['upload_path']          = './imghouse/';
-					$config['allowed_types']        = 'jpg|png|jpeg';
-					$config['min_size']             = 9000000;
-					$config['remove_spaces']        = false;
-					$config['encrypt_name'] 		= true;
+				$config['upload_path']          = './imghouse/';
+				$config['allowed_types']        = 'jpg|png|jpeg';
+				$config['min_size']             = 9000000;
+				$config['remove_spaces']        = false;
+				$config['encrypt_name'] 		= true;
 
 
-					$this->load->library('upload', $config);
-					if (!$this->upload->do_upload("foto$i")){
-						$error = array('error' => $this->upload->display_errors());
-						$this->session->set_flashdata('message', 'swal("Oops", "Ada kesalahan dalam upload gambar", "warning" );');
-						redirect('member/upload');
+				$this->load->library('upload', $config);
+				if (!$this->upload->do_upload("foto1")){
+					$error = array('error' => $this->upload->display_errors());
+					$this->session->set_flashdata('message', 'swal("Oops", "Ada kesalahan dalam upload gambar", "warning" );');
+					redirect('member/upload');
 
-					}else{
+				}else{
 
-						$arr = $this->input->post('fasilitas[]');
-						$fasilitas = implode(',', $arr);
+					$arr = $this->input->post('fasilitas[]');
+					$fasilitas = implode(',', $arr);
 
 
-						$img = array('upload_data' => $this->upload->data());
-						$new_name = $img['upload_data']['file_name'];
+					$img = array('upload_data' => $this->upload->data());
+					$new_name = $img['upload_data']['file_name'];
 
-						$data = [
+					$data = [
 
-							'kode_member' => $this->session->kode_member,
-							'prov' => $this->input->post('prov'),
-							'kab' => $this->input->post('kab'),
-							'kec' => $this->input->post('kec'),
-							'alamat_detail' => $this->input->post('alamat_detail'),
-							'kategori' => 'rumah',
-							'harga' => $this->input->post('harga'),
-							'jml_kamar_tidur' => $this->input->post('jml_kamar_tidur'),
-							'jml_kamar_mandi' => $this->input->post('jml_kamar_mandi'),
-							'luas_bangunan' => $this->input->post('luas_bangunan'),
-							'luas_tanah' => $this->input->post('luas_tanah'),
-							'jml_garasi' => $this->input->post('jml_garasi'),
-							'fasilitas' => $fasilitas,
-							'deskripsi' => $this->input->post('deskripsi'),
-							'foto' => $new_name,
-						];
-
-					}
+						'kode_member' => $this->session->kode_member,
+						'prov' => $this->input->post('prov'),
+						'kab' => $this->input->post('kab'),
+						'kec' => $this->input->post('kec'),
+						'alamat_detail' => $this->input->post('alamat_detail'),
+						'kategori' => 'rumah',
+						'harga' => $this->input->post('harga'),
+						'jml_kamar_tidur' => $this->input->post('jml_kamar_tidur'),
+						'jml_kamar_mandi' => $this->input->post('jml_kamar_mandi'),
+						'luas_bangunan' => $this->input->post('luas_bangunan'),
+						'luas_tanah' => $this->input->post('luas_tanah'),
+						'jml_garasi' => $this->input->post('jml_garasi'),
+						'fasilitas' => $fasilitas,
+						'deskripsi' => $this->input->post('deskripsi'),
+						'foto' => $new_name,
+					];
 
 				}
 
