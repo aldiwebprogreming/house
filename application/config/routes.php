@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = true;
 
 
 $route['member/detail_rumah/(:any)'] = 'member/detail_rumah/$1';
+$route['app/detail/(:any)'] = 'app/detail/$1';

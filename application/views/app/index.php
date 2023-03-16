@@ -34,7 +34,7 @@
             foreach ($kategori as $data) {
                 ?>
                 <div class="col-lg-3 col-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="<?= base_url('app/kategori?kategori=') ?><?= $data['kode'] ?>">
                         <div class="rounded p-4">
                             <div class="icon mb-3">
                                 <img class="img-fluid" src="<?= base_url('assets/') ?>img/icon-apartment.png" alt="Icon">

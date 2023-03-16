@@ -138,16 +138,16 @@
                     </div>
 
                     <div class="col-sm-3">
-                      <div class="form-check form-check-inline" style="position: inline;">
-                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="option1">
+                     <!--  <div class="form-check form-check-inline" style="position: inline;">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox1" value="e">
                         <label class="form-check-label" for="inlineCheckbox1">Kolam Ikan</label>
-                      </div>
+                      </div> -->
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Tempat Ibadah">
                         <label class="form-check-label" for="inlineCheckbox2">Tempat Ibadah</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" name="fasilitas[]" type="checkbox" id="inlineCheckbox2" value="Kebersihan">
                         <label class="form-check-label" for="inlineCheckbox2">Kebersihan</label>
                       </div>
 

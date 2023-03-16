@@ -85,17 +85,63 @@
 </div>
 
 <!-- JavaScript Libraries -->
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url('assets/') ?>lib/wow/wow.min.js"></script>
 <script src="<?= base_url('assets/') ?>lib/easing/easing.min.js"></script>
 <script src="<?= base_url('assets/') ?>lib/waypoints/waypoints.min.js"></script>
 <script src="<?= base_url('assets/') ?>lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Template Javascript -->
 <script src="<?= base_url('assets/') ?>js/main.js"></script>
 <script src="<?php echo base_url() ?>assets/alert.js"></script>
 <?php echo "<script>".$this->session->flashdata('message')."</script>"?> 
+
+<script>
+    $(document).ready(function(){
+        $('.kategori').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:false,
+            responsive:{
+                0:{
+                    items:1.5
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5.5
+                }
+            }
+        })
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:false,
+            responsive:{
+                0:{
+                    items:1.5
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:3.5
+                }
+            }
+        })
+    });
+</script>
 </body>
+
+
 
 </html>
