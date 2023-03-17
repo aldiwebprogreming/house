@@ -61,17 +61,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <!-- <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">Dijual</a>
-                        <a href="about.html" class="nav-item nav-link">Sewa</a>
-                        <div class="nav-item dropdown">
+                        <a href="about.html" class="nav-item nav-link">Sewa</a> -->
+                       <!--  <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="property-list.html" class="dropdown-item">Pencari rumah</a>
                                 <a href="property-type.html" class="dropdown-item">Penjual rumah</a>
                                 
                             </div>
-                        </div>
+                        </div> -->
                        <!--  <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -79,9 +79,9 @@
                                 <a href="404.html" class="dropdown-item">404 Error</a>
                             </div>
                         </div> -->
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
                     </div>
-                    <a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>
+                    <a href="<?= base_url('member') ?>" class="btn btn-primary px-3 d-none d-lg-flex">Login</a>
                 </div>
             </nav>
         </div>
