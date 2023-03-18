@@ -188,7 +188,6 @@
 				$this->db->insert('tbl_rumah', $data);
 				$this->session->set_flashdata('message', 'swal("Yess", "Rumah anda berhasil di upload", "success");');
 				redirect('member/upload');
-
 			}
 
 		}
@@ -197,8 +196,8 @@
 
 			$kodemember = $this->session->kode_member;
 			$data['upload'] = $this->db->get_where('tbl_rumah', ['kode_member' => $kodemember])->result_array();
-			$this->load->view('template_member/header');
-			$this->load->view('member/data_upload', $data);
+			$this->load->view('template_member/header');  
+			$this->load->view('member/data_upload', $data); 
 			$this->load->view('template_member/footer');
 
 		}
