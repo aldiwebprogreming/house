@@ -7,7 +7,7 @@
             <h1 class="display-5 animated fadeIn mb-4">Temukan rumah</span> Impianmu di Homestay </h1>
             <p class="animated fadeIn mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet
             sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-            <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"><i class="fa fa-home"></i> Mulai mencari</a>
+            <a href="<?= base_url('member/') ?>" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"><i class="fa fa-user"></i> Login sebagai penjual</a>
         </div>
         <div class="col-md-6 animated fadeIn">
             <div class="owl-carousel header-carousel">
@@ -184,7 +184,7 @@
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="property-item rounded overflow-hidden">
                                         <div class="position-relative overflow-hidden">
-                                            <a href=""><img class="img-fluid" src="<?= base_url('imghouse/') ?><?= $produk['foto'] ?>" alt=""></a>
+                                            <a href="<?= base_url('app/detail/') ?><?= $produk['kode_rumah'] ?>"><img class="img-fluid" src="<?= base_url('imghouse/') ?><?= $produk['foto'] ?>" alt=""></a>
                                             <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
 
                                             <?php 
