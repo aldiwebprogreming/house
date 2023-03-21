@@ -17,10 +17,10 @@
               <div class="form-group mt-3">
                 <label for="exampleInputEmail1" class="mb-2 text-primary">Number Whatsapp</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter number whatsapp" name="nowa">
-                <?php echo form_error('nowa', '<div class="text-danger">', '</div>'); ?>
+                <?php echo form_error('nowa', '<gnb  div class="text-danger">', '</div>'); ?>
               </div>
 
-              <div class="form-group mt-3">
+              <div class="form-grou ghg,hgp mt-3">
                 <label for="exampleInputEmail1" class="mb-2 text-primary">Email</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
                 <?php echo form_error('email', '<div class="text-danger">', '</div>'); ?>
@@ -37,7 +37,6 @@
                 <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter password" name="pass">
                 <?php echo form_error('pass', '<div class="text-danger">', '</div>'); ?>
               </div>
-
               <div class="form-group mt-3">
                 <label for="exampleInputEmail1" class="mb-2 text-primary">Confirm Password</label>
                 <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter  confirm password" name="pass1">
